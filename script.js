@@ -1,4 +1,4 @@
-let bendovi = [
+var bendovi = [
     "Slipknot",
     "Korn",
     "Linkin Park",
@@ -6,57 +6,55 @@ let bendovi = [
     "System Of A Down"
 ];
 
-function prikaziBendove(niz){
+function prikaziBendove(niz) {
 
-    let tekst = "";
+    var tekst = "";
 
-   
-    for(let i = 0; i < niz.length; i++){
+    for (var i = 0; i < niz.length; i++) {
         tekst += niz[i] + "<br>";
     }
 
     return tekst;
 }
 
-function proveriAlbum(ocena){
+function proveriAlbum(ocena) {
 
-    // KONTROLNA STRUKTURA
-    if(ocena >= 8){
+    if (ocena >= 8) {
         return "Odličan album!";
     }
-    else{
+    else {
         return "Album je prosečan.";
     }
 }
 
-function ucitajBendove(){
+function ucitajBendove() {
 
-    let rezultat = document.getElementById("rezultat");
+    var rezultat = document.getElementById("rezultat");
 
     rezultat.innerHTML = prikaziBendove(bendovi);
 
     rezultat.style.color = "lightgreen";
 }
 
-function oceniAlbum(){
+function oceniAlbum() {
 
-    let ocena = document.getElementById("ocena").value;
+    var ocena = document.getElementById("ocena").value;
 
-    let poruka = proveriAlbum(ocena);
+    var poruka = proveriAlbum(ocena);
 
     document.getElementById("albumRezultat").innerHTML = poruka;
 }
 
-function posaljiFormu(){
+function posaljiFormu() {
 
-    let ime = document.getElementById("ime").value;
-    let omiljeniBend = document.getElementById("bend").value;
-    let komentar = document.getElementById("komentar").value;
+    var ime = document.getElementById("ime").value;
+    var omiljeniBend = document.getElementById("bend").value;
+    var komentar = document.getElementById("komentar").value;
 
-let velikoIme = ime.toUpperCase();
-    let duzinaKomentara = komentar.length;
+    var velikoIme = ime.toUpperCase();
+    var duzinaKomentara = komentar.length;
 
-    let ispis = "Fan: " + velikoIme + "<br>";
+    var ispis = "Fan: " + velikoIme + "<br>";
     ispis += "Omiljeni bend: " + omiljeniBend + "<br>";
     ispis += "Broj karaktera komentara: " + duzinaKomentara;
 
@@ -65,11 +63,11 @@ let velikoIme = ime.toUpperCase();
     return false;
 }
 
-function dodajAlbum(){
+function dodajAlbum() {
 
-    let noviAlbum = document.getElementById("noviAlbum").value;
+    var noviAlbum = document.getElementById("noviAlbum").value;
 
-    let albumi = [
+    var albumi = [
         "Hybrid Theory",
         "Iowa",
         "Follow The Leader"
@@ -79,15 +77,16 @@ function dodajAlbum(){
 
     albumi.sort();
 
-    let tekst = "";
+    var tekst = "";
 
-    for(let i = 0; i < albumi.length; i++){
+    for (var i = 0; i < albumi.length; i++) {
         tekst += "<li>" + albumi[i] + "</li>";
     }
-document.getElementById("lista").innerHTML = tekst;
+
+    document.getElementById("lista").innerHTML = tekst;
 }
 
-function promeniTemu(){
+function promeniTemu() {
 
     document.body.classList.toggle("tamnaTema");
 }
