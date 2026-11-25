@@ -90,25 +90,24 @@ function promeniTemu() {
 
     document.body.classList.toggle("tamnaTema");
 }
-
-var brojLajkova = 0;
 var lajkovao = false;
 
 function lajkujSajt() {
 
     var dugme = document.getElementById("likeDugme");
-    var broj = document.getElementById("brojLajkova");
 
     if (lajkovao == false) {
         brojLajkova++;
         lajkovao = true;
-        dugme.innerHTML = "👍 Lajkovano " + brojLajkova;
+
+        dugme.innerHTML =
+            '<i class="fa-solid fa-thumbs-up"></i> Lajkovano ' + brojLajkova;
     }
     else {
         brojLajkova--;
         lajkovao = false;
-        dugme.innerHTML = "👍 Like " + brojLajkova;
-    }
 
-    broj.innerHTML = brojLajkova;
+        dugme.innerHTML =
+            '<i class="fa-solid fa-thumbs-up"></i> Like ' + brojLajkova;
+    }
 }
